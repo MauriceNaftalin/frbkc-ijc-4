@@ -1,0 +1,5 @@
+# Jetbrains IntelliJ specific files
+.idea
+
+# Build output directory
+target
