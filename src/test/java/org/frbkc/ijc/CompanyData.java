@@ -25,6 +25,10 @@ public class CompanyData {
 
         // TODO populate the Map departmentDirectory with key-value pairs, where the key
         // is a member of the DepartmentId enum, and the value is a new Department
+        final DepartmentId[] ids = DepartmentId.values();
+        for (DepartmentId id : ids) {
+            departmentDirectory.put(id, new Department(id));
+        }
 
         Department sales = departmentDirectory.get(DepartmentId.SALES);
         Department production = departmentDirectory.get(DepartmentId.PRODUCTION);

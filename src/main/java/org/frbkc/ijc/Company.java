@@ -26,7 +26,12 @@ public class Company implements OrgUnit {
 
     // TODO implement getEmployees()
 
+
     // TODO implement getManagedUnits()
+    @Override
+    public Set<? extends OrgUnit> getManagedUnits() {
+        return new HashSet<>(departmentDirectory.values());
+    }
 
     @Override
     public String getName() {
@@ -40,6 +45,15 @@ public class Company implements OrgUnit {
 
     public Map<Department,Integer> getDepartmentCosts() {
         // TODO implement getDepartmentCosts (Map from Department to total salary for that Department)
+        Map<Department,Integer> departmentCosts = new HashMap<>();
+        for (Department d : getDepartmentDirectory().values()) {
+            int departmentCost = 0;
+            for (Employee e : d.getEmployees()) {
+                departmentCost += e.getSalary();
+            }
+            departmentCosts.put(d, departmentCost);
+        }
+        return departmentCosts;
     }
 
     public void applyRaise(int raise) {

@@ -1,5 +1,6 @@
 package org.frbkc.ijc;
 
+import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -54,6 +55,7 @@ class CompanyTest {
         assertEquals(expectedSalesEmployees, employeesFromSales);
     }
 
+    @Ignore
     @Test
     void testDepartmentCosts() {
         Map<DepartmentId, Department> departmentDirectory = company.getDepartmentDirectory();

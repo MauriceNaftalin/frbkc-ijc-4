@@ -21,7 +21,12 @@ public class Department implements OrgUnit {
         return id.toString();
     }
 
-    // TODO implement getManagedUnits()
+    @Override
+    public Set<? extends OrgUnit> getManagedUnits() {
+        // TODO implement getManagedUnits()
+        return Set.of();
+    }
+
 
     @Override
     public Set<Employee> getEmployees() {
